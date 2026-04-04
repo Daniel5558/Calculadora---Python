@@ -17,7 +17,7 @@ elif op == 2:
     print("Resultado: ", resultado)
 elif op == 3:
     resultado = n1 * n2
-    print("Resultado: ", resultado)
+    print(f"Resultado: {resultado}")
 elif op == 4:
     if n2 != 0:
         resultado = n1 / n2
