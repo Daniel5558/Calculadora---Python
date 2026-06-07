@@ -1,28 +1,63 @@
-print ("== CALCULADORA ==  ")
+def somar (Numero1 , Numero2):
+    soma = Numero1 + Numero2
+    print(soma)
+   
+def subtrair (Numero1 , Numero2):
+    subtracao = Numero1 - Numero2
+    print(subtracao)
+   
+def multiplicar(Numero1 ,Numero2):
+    multiplicacao = Numero1 * Numero2
+    print(multiplicacao)
+   
+def dividir(Numero1, Numero2):
+    try:
+        divisao = Numero1 / Numero2
+        print(divisao)
+    except ZeroDivisionError:
+        print("Não é possível dividir por zero!")
 
-n1 = float(input("Digite o primeiro número: "))
-n2 = float(input("Digite o segundo número: "))
-print("Escolha a operação: ")
-print("1 - Adição") 
-print("2 - Subtração")
-print("3 - Multiplicação")
-print("4 - Divisão")
-op = int(input("Digite o número da operação desejada: "))
+   
+while True :
+   
+    print('=== CALULADORA ===')
 
-if op == 1:
-    resultado = n1 + n2
-    print("Resultado: ", resultado)
-elif op == 2:
-    resultado = n1 - n2
-    print("Resultado: ", resultado)
-elif op == 3:
-    resultado = n1 * n2
-    print(f"Resultado: {resultado}")
-elif op == 4:
-    if n2 != 0:
-        resultado = n1 / n2
-        print("Resultado: ", resultado)
+
+   
+    try:
+        Numero1 = float(input("Digite um numero : "))
+       
+    except ValueError:
+        print("Digite Apenas Numeros")
+        continue  
+       
+    operacao = str(input("Digite a Operação : (+, -, *, /): "))        
+   
+   
+    try:
+        Numero2 = float(input("Digite um numero : "))
+       
+    except ValueError:
+        print("Digite Apenas Numeros")
+        continue
+    
+    if operacao == '+':
+            somar(Numero1 ,Numero2)            
+           
+    elif operacao == '-' :
+            subtrair(Numero1 ,Numero2)            
+           
+    elif operacao == '*':
+            multiplicar(Numero1 ,Numero2)              
+           
+    elif operacao == '/':
+            dividir(Numero1 ,Numero2)    
+            
     else:
-        print("Erro: Divisão por zero não é permitida.")
-else:    
-    print("Operação inválida. Por favor, escolha uma operação válida.")
+        print("Operação inválida! Use +, -, * ou /")
+        continue
+
+    continuar = input("Deseja fazer outra operação? (s/n): ")
+    if continuar == "n":
+        print("Encerrando Programa...")
+        break
